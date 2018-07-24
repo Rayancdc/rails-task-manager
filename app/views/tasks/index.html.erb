@@ -1,0 +1,12 @@
+<h1>All Tasks</h1>
+<ul>
+<% @tasks.each do |task| %>
+  <li><%= link_to "", check_path(task), class: "list-item #{task.completed ? 'far fa-check-square' : 'far fa-square'}",
+            method: :post %><a href="/tasks/<%= task.id %>"><%= task.title %></a> <%= link_to "", edit_task_path(task), class: "list-item fas fa-edit" %>
+      <%= link_to "", destroy_path(task), class: "fas fa-trash-alt trash",
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></li>
+<% end %>
+</ul>
+
+<%= link_to "Create new task", tasks_new_path %>

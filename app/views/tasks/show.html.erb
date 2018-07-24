@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-sm-3 col-sm-6 text-center">
+      <h1>Task</h1>
+      <p><%= @task.title %></p>
+      <p><%= @task.details %></p>
+      <%= link_to "Edit", edit_task_path, class: "btn btn-warning" %>
+      <%= link_to "Delete", destroy_path, class: "btn btn-danger",
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+     <%= link_to "Task Manager", tasks_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
+
